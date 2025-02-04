@@ -8,9 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.regex.Pattern;
 
 @Service
@@ -32,11 +30,19 @@ public class NodeService {
     }
     public ResponseEntity<String> addNode(Node node) {
         try {
-
             String errorMessage = validateData(node);
             if (errorMessage != null) {
                 // If there is an error, return the message with a bad request
                 return new ResponseEntity<>(errorMessage, HttpStatus.BAD_REQUEST);
+            }
+
+            // Check if a Node with the same data already exists
+            boolean exists = nodeRepository.existsByNodeDetails(
+                    node.getNodeType(), node.getParentNodeGroupName(), node.getParentNodeGroupId(),
+                    node.getParentNode(), node.getDescription(), node.getMemo());
+
+            if (exists) {
+                return new ResponseEntity<>("A node with the same values already exists.", HttpStatus.BAD_REQUEST);
             }
 
             // Auto-generate nodeId and nodeName if not provided
