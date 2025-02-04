@@ -21,6 +21,12 @@ Notes
 * Auto-generated fields: nodeId and nodeName are auto-generated if not provided.
 * Validation: Ensures valid input and checks for duplicates in the database before saving.
 
+PostMan Testing Screenshots
+![image](https://github.com/user-attachments/assets/5dcf8f1b-4886-4fee-bfc7-1ab2febe6b6f)
+
+
+
+
 Technologies
 * Java (Spring Boot)
 * PostgreSQL
@@ -42,3 +48,7 @@ src
                     │   └── NodeRepository.java
                     └── service
                         └── NodeService.java
+
+
+
+                        
