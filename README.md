@@ -23,8 +23,10 @@ Notes
 
 PostMan Testing Screenshots
 ![image](https://github.com/user-attachments/assets/5dcf8f1b-4886-4fee-bfc7-1ab2febe6b6f)
-
-
+![image](https://github.com/user-attachments/assets/9cf5fcff-dcc4-4d13-80b5-3011fe8021a9)
+![image](https://github.com/user-attachments/assets/9be27d45-441b-4bc5-ba9c-9287eb518214)
+![image](https://github.com/user-attachments/assets/832ef4c1-9827-4dc6-b112-d0f3d481ad4c)
+![image](https://github.com/user-attachments/assets/2abfd9c3-902e-46a7-9a04-182d36038bc0)
 
 
 Technologies
