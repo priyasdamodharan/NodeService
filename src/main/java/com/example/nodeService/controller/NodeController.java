@@ -21,6 +21,17 @@ public class NodeController {
         return nodeService.addNode(node);
     }
 
+    @GetMapping("{nodeId}")
+    public ResponseEntity<Node> getNodeById(@PathVariable String nodeId) {
+        Node node = nodeService.getNodeById(nodeId); 
+        if (node != null) {
+            return new ResponseEntity<>(node, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+
     @GetMapping("getAllNodes")
     public ResponseEntity<List<Node>> getNodes() {
         return nodeService.getAllNodes();

@@ -24,4 +24,6 @@ public interface NodeRepository extends JpaRepository<Node, String> {
             @Param("parentNode") String parentNode,
             @Param("description") String description,
             @Param("memo") String memo);
+
+    Node findByNodeId(String nodeId);  // Custom query to find a node by nodeId
 }

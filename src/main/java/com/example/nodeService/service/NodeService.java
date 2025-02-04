@@ -28,6 +28,16 @@ public class NodeService {
         }
         return new ResponseEntity<>(new ArrayList<>(), HttpStatus.BAD_REQUEST);
     }
+
+    public Node getNodeById(String nodeId) {
+        try {
+            return nodeRepository.findByNodeId(nodeId);  // Fetch node by nodeId from the repository
+        } catch (Exception e) {
+            // Log the exception
+            e.printStackTrace();
+            throw new RuntimeException("Internal Server Error: Unable to retrieve node.");
+        }
+    }
     public ResponseEntity<String> addNode(Node node) {
         try {
             String errorMessage = validateData(node);
@@ -119,5 +129,7 @@ public class NodeService {
     private boolean containsSpecialCharacters(String input) {
         return input != null && Pattern.compile(SPECIAL_CHAR_REGEX).matcher(input).find();
     }
+
+
 
 }
